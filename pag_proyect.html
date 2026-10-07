@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Pago Seguro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .payment-container {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            width: 350px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #555;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Procesamiento de Pago</h2>
+        <form action="/procesar_pago" method="POST">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" required>
+
+            <label for="tarjeta">Número de tarjeta</label>
+            <input type="text" id="tarjeta" name="tarjeta" maxlength="16" required>
+
+            <label for="expiracion">Fecha de expiración (MM/AA)</label>
+            <input type="text" id="expiracion" name="expiracion" placeholder="MM/AA" required>
+
+            <label for="cvv">CVV</label>
+            <input type="password" id="cvv" name="cvv" maxlength="3" required>
+
+            <button type="submit">Pagar</button>
+        </form>
+    </div>
+</body>
+</html>
